@@ -1,8 +1,13 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.15)
 project(OpenWorldGame)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Set policy for FetchContent
+if(POLICY CMP0135)
+    cmake_policy(SET CMP0135 NEW)
+endif()
 
 # Find Raylib
 find_package(raylib QUIET)
@@ -12,6 +17,7 @@ if (NOT raylib_FOUND)
     include(FetchContent)
     FetchContent_Declare(raylib
         URL https://github.com/raysan5/raylib/archive/refs/tags/4.5.0.tar.gz
+        DOWNLOAD_EXTRACT_TIMESTAMP ON
     )
     FetchContent_MakeAvailable(raylib)
 endif()
