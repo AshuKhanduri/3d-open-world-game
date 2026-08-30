@@ -16,7 +16,7 @@ if (NOT raylib_FOUND)
     message(STATUS "Raylib not found. Building from source...")
     include(FetchContent)
     FetchContent_Declare(raylib
-        URL https://github.com/raysan5/raylib/archive/refs/tags/4.5.0.tar.gz
+        URL https://github.com/raysan5/raylib/archive/refs/tags/5.0.tar.gz
         DOWNLOAD_EXTRACT_TIMESTAMP ON
     )
     FetchContent_MakeAvailable(raylib)
